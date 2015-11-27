@@ -17,12 +17,16 @@
 
 #import <Foundation/Foundation.h>
 
+@class BWObjectMapping;
+
 typedef id(^BWObjectMappingValueBlock)(id value, id object);
 
-typedef id(^BWObjectMappingObjectBlock)(Class objectClass, NSString *primaryKey, id primaryKeyValue, id JSON);
+typedef id(^BWObjectMappingObjectBlock)(Class objectClass, NSString *primaryKey, id primaryKeyValue, id JSON, id userInfo);
 
 typedef void(^BWObjectMappingObjectDidMapObjectBlock)(id object);
 
 typedef id(^BWObjectRelationMappingValueBlock)(id object);
 
 typedef void(^BWObjectMappingCompletionBlock)(id object, id JSON);
+
+typedef void(^BWObjectMappingMappingBlock)(BWObjectMapping *mapping);
